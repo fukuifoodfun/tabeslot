@@ -1,0 +1,124 @@
+<html>
+<haed>
+<script type="text/javascript" src="js/jquery-1.7.1.min.js"></script>
+<script type="text/javascript">
+
+$(document).ready(function(){
+
+  var reset = function(){
+    $('#view_slot').show();
+    $('#view_map').hide();
+    $('#view_explain').hide();
+    $('#view_comment').hide();
+
+    $('#btn_explain1').hide();
+    $('#btn_comment1').hide();
+
+    $('#btn_slot_start').show();
+    $('#btn_slot_stop').hide();
+    $('#btn_slot_map').hide();
+    $('#slot .label').text('slot ready');
+  };
+  reset();
+
+
+  $('#btn_reset').bind('click',function(){
+    reset();
+  });
+
+
+
+  $('#btn_slot_start').bind('click',function(){
+    $('#btn_slot_start').hide();
+    $('#btn_slot_stop').show();
+    $('#btn_slot_map').hide();
+    $('#slot .label').text('slot running');
+  });
+
+  $('#btn_slot_stop').bind('click',function(){
+    $('#btn_explain1').show();
+    $('#btn_comment1').show();
+
+    $('#btn_slot_start').hide();
+    $('#btn_slot_stop').hide();
+    $('#btn_slot_map').show();
+    $('#slot .label').text('slot stoped');
+  });
+
+  $('#btn_slot_map').bind('click',function(){
+    $('#view_slot').hide();
+    $('#view_map').show();
+    $('#view_explain').hide();
+    $('#view_comment').hide();
+  });
+
+
+  $('#btn_explain1').bind('click',function(){
+    $('#view_slot').hide();
+    $('#view_map').hide();
+    $('#view_explain').show();
+    $('#view_comment').hide();
+  });
+
+  $('#btn_comment1').bind('click',function(){
+    $('#view_slot').hide();
+    $('#view_map').hide();
+    $('#view_explain').hide();
+    $('#view_comment').show();
+  });
+
+
+});
+
+
+</script>
+</head>
+<body>
+<form>
+<input type="button" value="reset" id="btn_reset" />
+</form>
+
+<div id="view_slot">
+<h2>スロット画面</h2>
+
+<div style="width:300;height:400;background-color:pink;" id="slot">
+  <div class="label"></div>
+
+  <input type="button" value="explain1" id="btn_explain1"/>
+  <input type="button" value="comment1" id="btn_comment1"/>
+
+</div>
+
+<form>
+  <input type="button" value="start" id="btn_slot_start"/>
+  <input type="button" value="stop" id="btn_slot_stop"/>
+  <input type="button" value="go!" id="btn_slot_map"/>
+</form>
+</div>
+
+<div id="view_map">
+<h2>地図画面</h2>
+
+<div style="width:300;height:400;background-color:yellow;" id="map">map</div>
+
+
+</div>
+
+<div id="view_explain">
+<h2>食べ物説明</h2>
+
+<div style="width:300;height:400;background-color:gray;"></div>
+
+</div>
+
+<div id="view_comment">
+<h2>食べ物コメント</h2>
+
+<div style="width:300;height:400;background-color:gray;"></div>
+
+</div>
+
+
+
+</body>
+</html>
